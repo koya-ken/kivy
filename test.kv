@@ -1,0 +1,49 @@
+AnchorLayout:
+    image:test
+    Label:  # add comment
+        text: "Hello World"
+        pos_hint: {'x': .3, 'y': .6}
+    Label:  # add comment
+        text: "Hello World"
+    Button:
+        text: "ROCK YOU!!"
+        pos_hint: {'x': .3, 'y': .6}
+        size_hint: .5, .2
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        AsyncImage
+            # size_hint: .5, None 
+            size_hint: .5, .5 
+            source: 'res/dog.jpg'
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'top'
+        Image
+            # size_hint: .5, None 
+            size_hint: .5, .5 
+            source: 'res/dog.jpg'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        ImageWidget:
+            id:test
+            # size_hint: .5, None 
+            size_hint: .5, .5 
+
+<ImageWidget>:
+    image:image
+    canvas.before:
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size: root.size
+        orientation: 'vertical'
+
+        Image:
+            id:image
+            texture: root.image_texture

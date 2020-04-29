@@ -1,0 +1,17 @@
+#:kivy 1.10.0
+<ObjectDetectionView>:
+    image:image
+    canvas.before:
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size: root.size
+        orientation: 'vertical'
+
+        Image:
+            id:image
+            texture: root.image_texture
