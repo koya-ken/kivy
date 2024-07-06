@@ -1,0 +1,1 @@
+https://github.com/kivy/kivy/issues/3637
